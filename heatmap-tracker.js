@@ -7,18 +7,19 @@
     let coordinates = [];
     let lastMoveTime = 0;
 
-    // Rastrear movimiento de mouse (Throttling de 150ms para no saturar memoria)
+    // Rastrear movimiento de mouse (Throttling de 150ms)
     document.addEventListener('mousemove', (e) => {
         const now = Date.now();
         if (now - lastMoveTime > 150) {
-            coordinates.push({ x: e.clientX, y: e.clientY, type: 'move' });
+            // Cambio crucial: usar pageX y pageY para registrar el scroll real
+            coordinates.push({ x: e.pageX, y: e.pageY, type: 'move' });
             lastMoveTime = now;
         }
     });
 
     // Rastrear clics exactos
     document.addEventListener('click', (e) => {
-        coordinates.push({ x: e.clientX, y: e.clientY, type: 'click' });
+        coordinates.push({ x: e.pageX, y: e.pageY, type: 'click' });
     });
 
     // Enviar datos por lotes justo al salir de la página
