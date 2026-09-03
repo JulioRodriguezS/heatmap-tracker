@@ -1,6 +1,6 @@
 (function() {
     // Si está dentro del visor, no registrar movimientos
-    if (window.self !== window.top) return;
+    if (window.self !== window.top) return; 
     const supabaseUrl = 'https://tbhyzovkwpetnpyumblb.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRiaHl6b3Zrd3BldG5weXVtYmxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgwMDUxOTksImV4cCI6MjEwMzU4MTE5OX0._P132KIv3H6q7bYFXxrnfcyEoSUNabfnqjovO9SinLU'; // Pega tu llave de Supabase aquí
 
